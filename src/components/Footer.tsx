@@ -42,7 +42,7 @@ const Footer = () => {
                   { to: "/kurslar", label: "Kurslar" },
                   { to: "/ucretler", label: "Ücretler ve Harçlar" },
                   { to: "/sinav-takvimi", label: "Sınav Takvimi ve Sonuçlar" },
-                  { to: "/sss", label: "Sık Sorulan Sorular" },
+                  { to: "/#sss", label: "Sık Sorulan Sorular" },
                 ].map((item) => (
                   <li key={item.to}>
                     <Link

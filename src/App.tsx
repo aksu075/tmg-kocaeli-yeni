@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/admin/ProtectedRoute";
 import { lazy, Suspense } from "react";
@@ -16,7 +16,6 @@ import AnnouncementsPage from "./pages/AnnouncementsPage";
 import NotFound from "./pages/NotFound";
 import UcretlerPage from "./pages/UcretlerPage";
 import SinavTakvimiPage from "./pages/SinavTakvimiPage";
-import SSSPage from "./pages/SSSPage";
 import KvkkPage from "./pages/KvkkPage";
 
 // Admin Pages (lazy loaded)
@@ -57,7 +56,7 @@ const App = () => (
 
               <Route path="/ucretler" element={<UcretlerPage />} />
               <Route path="/sinav-takvimi" element={<SinavTakvimiPage />} />
-              <Route path="/sss" element={<SSSPage />} />
+              <Route path="/sss" element={<Navigate to="/#sss" replace />} />
               <Route path="/kvkk" element={<KvkkPage />} />
 
               {/* Admin Routes */}

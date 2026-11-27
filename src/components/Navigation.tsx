@@ -12,7 +12,7 @@ const navItems = [
   { to: "/ucretler", label: "Ücretler" },
   { to: "/sinav-takvimi", label: "Sınav Takvimi" },
   { to: "/duyurular", label: "Duyurular" },
-  { to: "/sss", label: "SSS" },
+  { to: "/#sss", label: "SSS" },
   { to: "/iletisim", label: "İletişim" },
 ];
 
@@ -38,7 +38,8 @@ const Navigation = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const isActive = (path: string) => {
-    if (path === "/") return location.pathname === "/";
+    if (path.includes("#")) return location.pathname + location.hash === path;
+    if (path === "/") return location.pathname === "/" && location.hash !== "#sss";
     return location.pathname.startsWith(path);
   };
 

@@ -26,7 +26,7 @@ const SSSYonetPage = () => {
   return (
     <IcerikSayfasi
       baslik="Sık Sorulan Sorular"
-      sitedeki="/sss"
+      sitedeki="/#sss"
       degisti={degisti}
       kaydediliyor={kaydediliyor}
       onKaydet={() => onKaydet((v) => ({ sorular: v.sorular.filter((x) => x.soru.trim() && x.cevap.trim()) }))}

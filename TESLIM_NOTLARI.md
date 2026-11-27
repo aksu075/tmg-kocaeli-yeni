@@ -53,7 +53,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 **Yeni sayfalar**
 - `/ucretler`: kurs ücretleri ve devlet harçları, toplam maliyet ve yenilemede ödenenler.
 - `/sinav-takvimi`: yıla göre sınavlar, sonuç sorgulama ve e-Devlet kimlik kartı bağlantıları.
-- `/sss`: 15 soru ve Google için soru-cevap işaretlemesi.
+- **Sık Sorulan Sorular** ana sayfada ayrı bir bölüm: ilk 5 soru görünür, "Tüm soruları gör" ile hepsi açılır. Menüdeki SSS bu bölüme götürür; eski `/sss` adresi de buraya yönlenir. Google için soru-cevap işaretlemesi var.
 - `/kvkk`: aydınlatma metni.
 
 **Yeni panel ekranları**

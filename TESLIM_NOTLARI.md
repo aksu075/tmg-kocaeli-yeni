@@ -60,6 +60,8 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 - `/belge-ve-dilekceler`: Kocaeli İl Emniyet Müdürlüğü'nün dilekçe örnekleri (dosyalar emniyetin sitesinden iner) ve emniyet randevu bağlantısı. Dilekçe listesi panelden düzenlenir.
 - `/kurumsal-egitim`: kurum ve firmalara toplu temel ve yenileme eğitimi; süreç, kimler için ve teklif. Kurslar sayfasındaki "Özel Eğitim Talebi" bölümünden ve alt bilgiden bağlanır. "Teklif İsteyin" iletişim formunu "Kurumsal eğitim teklifi" konusuyla açar.
 - Ana sayfada **Hızlı Erişim** kutuları: sınav sonuçları, puan hesaplama, başvuru şartları, sınav takvimi, belge ve dilekçeler, emniyet randevusu, e-Devlet kimlik kartı, ücretler ve SSS.
+- Ana sayfada **"İlk telefondan kimlik kartına beş adım"** bölümü: arayın, sağlık raporu, kayıt ve eğitim, sınav, kimlik kartı.
+- Kurslar sayfasında **"Eğitimleri karşılaştırın"** tablosu: süre, kimlerin katılabileceği ve kurs ücreti paneldeki kurs bilgilerinden gelir; bir eğitime tıklayınca o eğitimin sekmesi açılır. Telefonda tablo yerine liste görünür.
 
 **Yeni panel ekranları**
 - **Sınav Takvimi:** "Yeni yıl ekle" ile yeni yılın tarihleri girilir.

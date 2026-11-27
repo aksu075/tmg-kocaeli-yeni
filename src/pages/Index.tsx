@@ -6,6 +6,7 @@ import LatestAnnouncements from "@/components/LatestAnnouncements";
 import ContactCTA from "@/components/ContactCTA";
 import SikSorulanlar from "@/components/SikSorulanlar";
 import HizliErisim from "@/components/HizliErisim";
+import BesAdim from "@/components/BesAdim";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -39,6 +40,7 @@ const Index = () => {
     <Layout>
       <Hero />
       <HizliErisim />
+      <BesAdim />
       <Features />
       <FeaturedCourses />
       <LatestAnnouncements />

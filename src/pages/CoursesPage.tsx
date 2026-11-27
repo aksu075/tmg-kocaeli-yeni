@@ -1,4 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Course } from "@/types";
+
+// Karşılaştırma tablosunda "kimler katılır" sütunu: şartlar mevzuattan gelir, eğitimin adından anlaşılır
+const kimlerKatilir = (c: Course) => {
+  // Panelde adlar Türkçe karaktersiz de yazılmış olabilir ("Silahli", "Silahsiz")
+  const t = c.title
+    .toLocaleLowerCase("tr-TR")
+    .replace(/[ıi̇]/g, "i")
+    .replace(/ş/g, "s")
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c");
+  if (t.includes("yenileme")) return "Kimlik kartının süresi dolacak görevliler";
+  if (t.includes("silahsiz")) return "18 yaş, en az ortaokul mezunu";
+  if (t.includes("silahli")) return "21 yaş, en az lise mezunu";
+  return "–";
+};
+
+// "50" gibi yalnız sayı girilmişse "50 saat" yazılır
+const sureYaz = (s: string) => (/^\d+$/.test((s || "").trim()) ? `${s.trim()} saat` : s);
+
+const ucretYaz = (p: Course["price"]) => (typeof p === "number" ? (p > 0 ? `${p.toLocaleString("tr-TR")} TL` : "Arayın") : p || "Arayın");
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -16,6 +39,13 @@ import {
 
 const CoursesPage = () => {
   const { data: courses = [], isLoading } = useCourses();
+  const anahtar = (c: Course) => c.slug || c.id || "";
+  const [secili, setSecili] = useState<string>();
+  const sekmeler = useRef<HTMLDivElement>(null);
+  const sekmeyeGit = (c: Course) => {
+    setSecili(anahtar(c));
+    sekmeler.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   useEffect(() => {
     document.title = "Kurslarımız | TMG Güvenlik Eğitim Kurumu";
@@ -66,8 +96,64 @@ const CoursesPage = () => {
               </div>
             </div>
           ) : (
+            <>
+            {/* Karşılaştırma */}
+            <div className="max-w-5xl mx-auto mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-tmg-dark mb-2 text-center">Eğitimleri karşılaştırın</h2>
+              <p className="text-gray-500 text-center mb-6">Ayrıntısını görmek istediğiniz eğitime tıklayın.</p>
+              {/* Telefonda kart listesi */}
+              <ul className="md:hidden bg-white rounded-2xl border border-gray-100 shadow-sm divide-y divide-gray-100">
+                {courses.map((c) => (
+                  <li key={c._id || c.id}>
+                    <button type="button" onClick={() => sekmeyeGit(c)} className="w-full text-left px-4 py-3.5 flex items-center gap-3">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-tmg-dark leading-snug">{c.title}</p>
+                        <p className="text-sm text-gray-500 mt-0.5">{kimlerKatilir(c)}</p>
+                        <p className="text-sm text-gray-600 mt-1">
+                          {sureYaz(c.duration)} · <span className="font-semibold text-tmg-dark">{ucretYaz(c.price)}</span>
+                        </p>
+                      </div>
+                      <ChevronRight size={18} className="text-gray-300 flex-shrink-0" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <div className="hidden md:block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-gray-50 text-left text-gray-500">
+                      <th className="px-5 py-3 font-semibold">Eğitim</th>
+                      <th className="px-5 py-3 font-semibold">Süre</th>
+                      <th className="px-5 py-3 font-semibold">Kimler katılır?</th>
+                      <th className="px-5 py-3 font-semibold text-right">Kurs ücreti</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    {courses.map((c) => (
+                      <tr key={c._id || c.id} className="hover:bg-tmg-primary/5">
+                        <td className="px-5 py-3.5">
+                          <button type="button" onClick={() => sekmeyeGit(c)} className="font-semibold text-tmg-dark hover:text-tmg-secondary hover:underline text-left">
+                            {c.title}
+                          </button>
+                        </td>
+                        <td className="px-5 py-3.5 text-gray-600 whitespace-nowrap">{sureYaz(c.duration)}</td>
+                        <td className="px-5 py-3.5 text-gray-600">{kimlerKatilir(c)}</td>
+                        <td className="px-5 py-3.5 text-right font-semibold text-tmg-dark whitespace-nowrap">{ucretYaz(c.price)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-gray-500 mt-3">
+                Kurs ücretlerine devlete ödenen harç ve ücretler dahil değildir.{" "}
+                <Link to="/ucretler" className="text-tmg-secondary font-semibold hover:underline">Toplam maliyeti görün</Link>
+              </p>
+            </div>
+
+            <div ref={sekmeler} className="scroll-mt-28" />
             <Tabs
-              defaultValue={courses[0]?.slug || courses[0]?.id || "silahli"}
+              value={secili || anahtar(courses[0] || ({} as Course)) || "silahli"}
+              onValueChange={setSecili}
               className="max-w-5xl mx-auto"
             >
               {/* Tab Navigation */}
@@ -200,6 +286,7 @@ const CoursesPage = () => {
                 </TabsContent>
               ))}
             </Tabs>
+            </>
           )}
         </div>
       </section>

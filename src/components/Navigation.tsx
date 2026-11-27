@@ -68,7 +68,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group">
             <img
-              src="/logo.png"
+              src={`${import.meta.env.BASE_URL}logo.png`}
               alt="TMG Güvenlik Eğitim Kurumu"
               width={180}
               height={48}

@@ -18,7 +18,7 @@ const Footer = () => {
             <div>
               <div className="mb-5">
                 <img
-                  src="/logo.png"
+                  src={`${import.meta.env.BASE_URL}logo.png`}
                   alt="TMG Güvenlik Eğitim Kurumu"
                   width={210}
                   height={56}

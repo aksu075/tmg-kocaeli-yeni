@@ -5,6 +5,7 @@ import Features from "@/components/Features";
 import LatestAnnouncements from "@/components/LatestAnnouncements";
 import ContactCTA from "@/components/ContactCTA";
 import SikSorulanlar from "@/components/SikSorulanlar";
+import HizliErisim from "@/components/HizliErisim";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -37,6 +38,7 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
+      <HizliErisim />
       <Features />
       <FeaturedCourses />
       <LatestAnnouncements />

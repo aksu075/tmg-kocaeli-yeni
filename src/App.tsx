@@ -15,6 +15,9 @@ import ContactPage from "./pages/ContactPage";
 import AnnouncementsPage from "./pages/AnnouncementsPage";
 import NotFound from "./pages/NotFound";
 import UcretlerPage from "./pages/UcretlerPage";
+import PuanHesaplamaPage from "./pages/PuanHesaplamaPage";
+import BasvuruSartlariPage from "./pages/BasvuruSartlariPage";
+import BelgelerPage from "./pages/BelgelerPage";
 import SinavTakvimiPage from "./pages/SinavTakvimiPage";
 import KvkkPage from "./pages/KvkkPage";
 
@@ -55,6 +58,9 @@ const App = () => (
               <Route path="/iletisim" element={<ContactPage />} />
 
               <Route path="/ucretler" element={<UcretlerPage />} />
+              <Route path="/puan-hesaplama" element={<PuanHesaplamaPage />} />
+              <Route path="/basvuru-sartlari" element={<BasvuruSartlariPage />} />
+              <Route path="/belge-ve-dilekceler" element={<BelgelerPage />} />
               <Route path="/sinav-takvimi" element={<SinavTakvimiPage />} />
               <Route path="/sss" element={<Navigate to="/#sss" replace />} />
               <Route path="/kvkk" element={<KvkkPage />} />

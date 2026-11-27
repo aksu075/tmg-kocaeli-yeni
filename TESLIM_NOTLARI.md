@@ -55,6 +55,10 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 - `/sinav-takvimi`: yıla göre sınavlar, sonuç sorgulama ve e-Devlet kimlik kartı bağlantıları.
 - **Sık Sorulan Sorular** ana sayfada ayrı bir bölüm: ilk 5 soru görünür, "Tüm soruları gör" ile hepsi açılır. Menüdeki SSS bu bölüme götürür; eski `/sss` adresi de buraya yönlenir. Google için soru-cevap işaretlemesi var.
 - `/kvkk`: aydınlatma metni.
+- `/puan-hesaplama`: silahsız, silahlı ve silah fark sınavı için puan hesaplama aracı.
+- `/basvuru-sartlari`: yaş, öğrenim, sağlık raporu ve adli sicil engelleri.
+- `/belge-ve-dilekceler`: Kocaeli İl Emniyet Müdürlüğü'nün dilekçe örnekleri (dosyalar emniyetin sitesinden iner) ve emniyet randevu bağlantısı. Emniyet dosya adlarını değiştirirse bağlantılar `src/data/icerik.ts` içindeki `dilekceler` listesinden güncellenir.
+- Ana sayfada **Hızlı Erişim** kutuları: sınav sonuçları, puan hesaplama, başvuru şartları, sınav takvimi, belge ve dilekçeler, emniyet randevusu, e-Devlet kimlik kartı, ücretler ve SSS.
 
 **Yeni panel ekranları**
 - **Sınav Takvimi:** "Yeni yıl ekle" ile yeni yılın tarihleri girilir.

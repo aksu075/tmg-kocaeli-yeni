@@ -1,0 +1,105 @@
+// ==========================================
+// Yedek kurs bilgileri
+// Kurslar normalde yönetim panelinden (veritabanından) gelir. Bu liste yalnızca
+// veritabanına ulaşılamadığında gösterilir; tutarlar ve şartlar paneldekilerle aynı tutulmalıdır.
+// ==========================================
+
+import { Course } from "@/types";
+
+export const defaultCourses: Course[] = [
+  {
+    id: "silahli",
+    slug: "temel-silahli-egitim",
+    title: "Temel Silahlı Özel Güvenlik Eğitimi",
+    description: "Silahlı özel güvenlik görevlisi olmak için gereken temel eğitim.",
+    image: "",
+    duration: "120 saat",
+    price: 18000,
+    curriculum: [
+      "Özel Güvenlik Hukuku",
+      "Silah Bilgisi ve Atış Eğitimi",
+      "Güvenlik Tedbirleri",
+      "Olay Yeri Koruma",
+      "İlk Yardım",
+      "Etkili İletişim",
+      "Kalabalık Yönetimi",
+      "Yangın Güvenliği",
+    ],
+    requirements: [
+      "T.C. vatandaşı olmak",
+      "21 yaşını doldurmuş olmak",
+      "En az lise mezunu olmak",
+      "Engel olan bir adli sicil kaydı bulunmamak",
+      "Silahlı özel güvenlik görevlisi olur sağlık kurulu raporu (devlet hastanesinden)",
+    ],
+    isActive: true,
+    order: 1,
+  },
+  {
+    id: "silahsiz",
+    slug: "temel-silahsiz-egitim",
+    title: "Temel Silahsız Özel Güvenlik Eğitimi",
+    description: "Silahsız özel güvenlik görevlisi olmak için gereken temel eğitim.",
+    image: "",
+    duration: "100 saat",
+    price: 15000,
+    curriculum: [
+      "Özel Güvenlik Hukuku",
+      "Güvenlik Tedbirleri",
+      "Olay Yeri Koruma",
+      "İlk Yardım",
+      "Etkili İletişim",
+      "Kalabalık Yönetimi",
+      "Yangın Güvenliği",
+    ],
+    requirements: [
+      "T.C. vatandaşı olmak",
+      "18 yaşını doldurmuş olmak",
+      "En az ortaokul (ilköğretim) mezunu olmak",
+      "Engel olan bir adli sicil kaydı bulunmamak",
+      "Silahsız özel güvenlik görevlisi olur sağlık raporu",
+    ],
+    isActive: true,
+    order: 2,
+  },
+  {
+    id: "silahli-yenileme",
+    slug: "silahli-yenileme-egitimi",
+    title: "Silahlı Yenileme Eğitimi",
+    description: "Silahlı özel güvenlik kimlik kartının süresini uzatmak için yenileme eğitimi.",
+    image: "",
+    duration: "60 saat",
+    price: 9000,
+    curriculum: [],
+    requirements: [
+      "2 adet özel güvenlik kimlik kartı fotokopisi",
+      "2 adet nüfus cüzdanı fotokopisi",
+      "2 adet ikametgâh belgesi (e-Devlet'ten alınan geçerlidir)",
+      "2 adet mezuniyet belgesi fotokopisi",
+      "2 adet vesikalık fotoğraf",
+      "2 adet beyaz fonlu biyometrik fotoğraf (erkekler sakalsız)",
+    ],
+    isActive: true,
+    order: 3,
+  },
+  {
+    id: "silahsiz-yenileme",
+    slug: "silahsiz-yenileme-egitimi",
+    title: "Silahsız Yenileme Eğitimi",
+    description: "Silahsız özel güvenlik kimlik kartının süresini uzatmak için yenileme eğitimi.",
+    image: "",
+    duration: "50 saat",
+    price: 7500,
+    curriculum: [],
+    requirements: [
+      "2 adet özel güvenlik kimlik kartı fotokopisi",
+      "2 adet nüfus cüzdanı fotokopisi",
+      "2 adet ikametgâh belgesi (e-Devlet'ten alınan geçerlidir)",
+      "2 adet mezuniyet belgesi fotokopisi",
+      "2 adet vesikalık fotoğraf",
+      "2 adet beyaz fonlu biyometrik fotoğraf (erkekler sakalsız)",
+    ],
+    isActive: true,
+    order: 4,
+  },
+];

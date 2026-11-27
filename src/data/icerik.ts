@@ -9,14 +9,25 @@ export const KIMLIK_BASVURU_ADRESI = "https://www.turkiye.gov.tr/emniyet-ozel-gu
 // Kocaeli İl Emniyet Müdürlüğü özel güvenlik işlemleri randevusu
 export const RANDEVU_ADRESI = "https://onlineislemler.egm.gov.tr/Kocaeli/Sayfalar/ozelguvenlikrandevu.aspx";
 
-// Kocaeli İl Emniyet Müdürlüğü'nün yayımladığı dilekçe örnekleri (Word dosyası)
+// Kocaeli İl Emniyet Müdürlüğü'nün yayımladığı dilekçe örnekleri (Word dosyası).
+// Panelde "Belge ve Dilekçeler" ekranından değiştirilir; kayıt yoksa bu liste gösterilir.
+export interface Dilekce {
+  baslik: string;
+  aciklama: string;
+  adres: string;
+}
+export interface Belgeler {
+  dilekceler: Dilekce[];
+}
 const KOCAELI_EMNIYET = "https://www.kocaeli.pol.tr/kurumlar/kocaeli.pol.tr/Ozel-Guvenlik/";
-export const dilekceler = [
+export const dilekceler: Dilekce[] = [
   { baslik: "Temel eğitim başvuru dilekçesi", aciklama: "Silahlı ya da silahsız temel eğitime ilk kez başlayacaklar için.", adres: KOCAELI_EMNIYET + "1-Temel-Egitim-Dilekce-Ornegi-_Yeni_.docx" },
   { baslik: "Yenileme eğitimi dilekçesi", aciklama: "Kimlik kartının süresi dolmak üzere olanlar için.", adres: KOCAELI_EMNIYET + "2-Yenileme-Egitim-Dilekce-Ornegi-_Yeni_.docx" },
   { baslik: "Kimlik kartını silahlıya yükseltme dilekçesi", aciklama: "Silahsız kimlik kartını silahlıya çevirmek isteyenler için.", adres: KOCAELI_EMNIYET + "5-Kimlik--Yukseltmek-Icin-Dilekce-Ornegi.docx" },
   { baslik: "Güvenlik meslek yüksekokulu mezunları dilekçesi", aciklama: "Güvenlik bölümü mezunlarının kimlik kartı başvurusu için.", adres: KOCAELI_EMNIYET + "4-Guvenlik-MesYuk-Okulu-Dilekcesi_Yeni_.docx" },
 ];
+export const varsayilanBelgeler: Belgeler = { dilekceler };
+
 
 // ---- Site bilgileri
 export interface SiteBilgileri {

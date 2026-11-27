@@ -1,11 +1,11 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { icerikApi } from "@/lib/api";
 import {
-  varsayilanSite, varsayilanHarclar, varsayilanTakvim, varsayilanSSS,
-  SiteBilgileri, Harclar, Takvim, SSS,
+  varsayilanSite, varsayilanHarclar, varsayilanTakvim, varsayilanSSS, varsayilanBelgeler,
+  SiteBilgileri, Harclar, Takvim, SSS, Belgeler,
 } from "@/data/icerik";
 
-const VARSAYILAN = { site: varsayilanSite, harclar: varsayilanHarclar, takvim: varsayilanTakvim, sss: varsayilanSSS };
+const VARSAYILAN = { site: varsayilanSite, harclar: varsayilanHarclar, takvim: varsayilanTakvim, sss: varsayilanSSS, belgeler: varsayilanBelgeler };
 type Anahtar = keyof typeof VARSAYILAN;
 
 // Panelde kayıt yoksa ya da sunucuya ulaşılamazsa varsayılan içerik gösterilir.
@@ -30,6 +30,7 @@ export const useSiteBilgileri = () => useIcerik<SiteBilgileri>("site");
 export const useHarclar = () => useIcerik<Harclar>("harclar");
 export const useTakvim = () => useIcerik<Takvim>("takvim");
 export const useSSS = () => useIcerik<SSS>("sss");
+export const useBelgeler = () => useIcerik<Belgeler>("belgeler");
 
 export const useIcerikKaydet = (anahtar: Anahtar) => {
   const qc = useQueryClient();

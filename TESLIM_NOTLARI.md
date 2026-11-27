@@ -57,7 +57,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 - `/kvkk`: aydınlatma metni.
 - `/puan-hesaplama`: silahsız, silahlı ve silah fark sınavı için puan hesaplama aracı.
 - `/basvuru-sartlari`: yaş, öğrenim, sağlık raporu ve adli sicil engelleri.
-- `/belge-ve-dilekceler`: Kocaeli İl Emniyet Müdürlüğü'nün dilekçe örnekleri (dosyalar emniyetin sitesinden iner) ve emniyet randevu bağlantısı. Emniyet dosya adlarını değiştirirse bağlantılar `src/data/icerik.ts` içindeki `dilekceler` listesinden güncellenir.
+- `/belge-ve-dilekceler`: Kocaeli İl Emniyet Müdürlüğü'nün dilekçe örnekleri (dosyalar emniyetin sitesinden iner) ve emniyet randevu bağlantısı. Dilekçe listesi panelden düzenlenir.
 - `/kurumsal-egitim`: kurum ve firmalara toplu temel ve yenileme eğitimi; süreç, kimler için ve teklif. Kurslar sayfasındaki "Özel Eğitim Talebi" bölümünden ve alt bilgiden bağlanır. "Teklif İsteyin" iletişim formunu "Kurumsal eğitim teklifi" konusuyla açar.
 - Ana sayfada **Hızlı Erişim** kutuları: sınav sonuçları, puan hesaplama, başvuru şartları, sınav takvimi, belge ve dilekçeler, emniyet randevusu, e-Devlet kimlik kartı, ücretler ve SSS.
 
@@ -66,6 +66,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 - **Harçlar**
 - **Sık Sorulan Sorular:** sıra oklarla değiştirilir.
 - **Site Bilgileri:** telefon, adres, saatler ve ana sayfa rakamları.
+- **Belge ve Dilekçeler:** dilekçe başlığı, açıklaması ve dosya bağlantısı. Emniyet dosyanın adını değiştirirse bağlantı buradan güncellenir.
 - **Şifre Değiştir**
 - Panelde bir içerik hiç kaydedilmediyse site `src/data/icerik.ts` içindeki başlangıç içeriğini gösterir.
 
@@ -95,3 +96,4 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 
 - **Logo:** Artık sitenin kendi dosyası (`public/logo.png`); başka siteden yüklenmiyor. Şube adı olmayan bir logo istenirse aynı adla değiştirmek yeterli.
 - **KVKK metni:** Bir hukukçunun gözden geçirmesi önerilir.
+- **Facebook sayfası:** `index.html` içinde Google'a bildirilen `facebook.com/tmgyozelguvenlikegitimkurumu` adresinin kurumun kendi sayfası olduğu teyit edilmeli; değilse `sameAs` satırı silinmeli.

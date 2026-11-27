@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { useIcerikKaydet } from "@/hooks/use-icerik";
 
 // Panel ekranları için: sunucudaki (ya da varsayılan) içeriği forma yükler, değişikliği izler, kaydeder.
-export function useIcerikForm<T>(anahtar: "site" | "harclar" | "takvim" | "sss", sorgu: { data?: T; isPlaceholderData?: boolean; isFetching?: boolean }) {
+export function useIcerikForm<T>(anahtar: "site" | "harclar" | "takvim" | "sss" | "belgeler", sorgu: { data?: T; isPlaceholderData?: boolean; isFetching?: boolean }) {
   const [form, setForm] = useState<T | null>(null);
   const [ilk, setIlk] = useState<string>("");
   const kaydet = useIcerikKaydet(anahtar);

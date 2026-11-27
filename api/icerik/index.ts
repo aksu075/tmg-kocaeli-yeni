@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 // Yönetim panelinden düzenlenen sayfa içerikleri (sınav takvimi, harçlar, SSS, site bilgileri).
 // Her içerik tek bir kayıttır: { anahtar, veri }. Kayıt yoksa site kendi varsayılan içeriğini gösterir.
-const ANAHTARLAR = ["site", "harclar", "takvim", "sss"];
+const ANAHTARLAR = ["site", "harclar", "takvim", "sss", "belgeler"];
 const AZAMI_BOYUT = 100 * 1024; // 100 KB
 
 function getModel() {

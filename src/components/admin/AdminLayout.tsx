@@ -13,6 +13,7 @@ import {
   CalendarDays,
   Wallet,
   HelpCircle,
+  FileText,
   Settings,
   KeyRound,
 } from "lucide-react";
@@ -31,6 +32,7 @@ const menuItems = [
   { path: "/admin/sinav-takvimi", label: "Sınav Takvimi", icon: CalendarDays },
   { path: "/admin/harclar", label: "Harçlar", icon: Wallet },
   { path: "/admin/sss", label: "Sık Sorulan Sorular", icon: HelpCircle },
+  { path: "/admin/belgeler", label: "Belge ve Dilekçeler", icon: FileText },
   { path: "/admin/site-bilgileri", label: "Site Bilgileri", icon: Settings },
   { path: "/admin/sifre", label: "Şifre Değiştir", icon: KeyRound },
 ];

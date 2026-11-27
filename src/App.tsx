@@ -31,6 +31,7 @@ const MessagesPage = lazy(() => import("./pages/admin/MessagesPage"));
 const TakvimYonetPage = lazy(() => import("./pages/admin/TakvimYonetPage"));
 const HarclarYonetPage = lazy(() => import("./pages/admin/HarclarYonetPage"));
 const SSSYonetPage = lazy(() => import("./pages/admin/SSSYonetPage"));
+const BelgelerYonetPage = lazy(() => import("./pages/admin/BelgelerYonetPage"));
 const SiteBilgileriPage = lazy(() => import("./pages/admin/SiteBilgileriPage"));
 const SifrePage = lazy(() => import("./pages/admin/SifrePage"));
 
@@ -123,6 +124,14 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <SSSYonetPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/belgeler"
+                element={
+                  <ProtectedRoute>
+                    <BelgelerYonetPage />
                   </ProtectedRoute>
                 }
               />

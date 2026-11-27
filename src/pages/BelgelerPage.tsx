@@ -1,9 +1,16 @@
 import { FileText, Download, CalendarCheck, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import SayfaBaslik, { useSayfa } from "@/components/SayfaBaslik";
-import { dilekceler, RANDEVU_ADRESI, KIMLIK_BASVURU_ADRESI } from "@/data/icerik";
+import { varsayilanBelgeler, RANDEVU_ADRESI, KIMLIK_BASVURU_ADRESI } from "@/data/icerik";
+import { useBelgeler } from "@/hooks/use-icerik";
+
+// Dosya türüne göre düğme yazısı
+const indirYazisi = (adres: string) =>
+  /\.docx?($|\?)/i.test(adres) ? "Word dosyasını indir" : /\.pdf($|\?)/i.test(adres) ? "PDF dosyasını indir" : "Belgeyi aç";
 
 const BelgelerPage = () => {
+  const { data: belgeler = varsayilanBelgeler } = useBelgeler();
+  const dilekceler = (belgeler.dilekceler || []).filter((d) => d.baslik && /^https?:\/\//i.test(d.adres));
   useSayfa(
     "Belge ve Dilekçeler",
     "Özel güvenlik temel eğitim, yenileme ve kimlik kartı dilekçe örnekleri; Kocaeli Emniyet özel güvenlik randevusu."
@@ -36,7 +43,7 @@ const BelgelerPage = () => {
                   <h2 className="font-bold text-tmg-dark mb-1">{d.baslik}</h2>
                   <p className="text-sm text-gray-500 mb-3">{d.aciklama}</p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-tmg-secondary group-hover:underline">
-                    <Download size={15} /> Word dosyasını indir
+                    <Download size={15} /> {indirYazisi(d.adres)}
                   </span>
                 </div>
               </a>

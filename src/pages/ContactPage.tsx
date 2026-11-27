@@ -8,13 +8,16 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { contactApi } from "@/lib/api";
 import { useCourses } from "@/hooks/use-courses";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useSiteBilgileri } from "@/hooks/use-icerik";
 import { varsayilanSite, telBaglanti } from "@/data/icerik";
 
 const ContactPage = () => {
   const { data: courses = [] } = useCourses();
   const { data: site = varsayilanSite } = useSiteBilgileri();
+  // Başka sayfadan gelen hazır konu (örn. /iletisim?konu=Kurumsal eğitim teklifi)
+  const [parametreler] = useSearchParams();
+  const hazirKonu = (parametreler.get("konu") || "").slice(0, 100);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -22,7 +25,7 @@ const ContactPage = () => {
     email: "",
     phone: "",
     course: "",
-    subject: "",
+    subject: hazirKonu,
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);

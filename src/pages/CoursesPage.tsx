@@ -228,7 +228,7 @@ const CoursesPage = () => {
               asChild
               className="bg-tmg-secondary hover:bg-tmg-secondary/90 text-white px-8 py-6 text-lg rounded-lg shadow-lg shadow-tmg-secondary/25 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             >
-              <Link to="/iletisim" className="inline-flex items-center gap-2">
+              <Link to="/iletisim?konu=Kurumsal%20e%C4%9Fitim%20teklifi" className="inline-flex items-center gap-2">
                 Teklif Alın <ChevronRight size={20} />
               </Link>
             </Button>
@@ -237,7 +237,7 @@ const CoursesPage = () => {
               variant="outline"
               className="bg-white/5 backdrop-blur-sm border-white/30 text-white hover:bg-white/15 px-8 py-6 text-lg rounded-lg transition-all duration-300"
             >
-              <Link to="/hakkimizda">Hakkımızda</Link>
+              <Link to="/kurumsal-egitim">Kurumsal Eğitim</Link>
             </Button>
           </div>
         </div>

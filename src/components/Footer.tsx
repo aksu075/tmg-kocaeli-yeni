@@ -41,6 +41,7 @@ const Footer = () => {
                 {[
                   { to: "/kurslar", label: "Kurslar" },
                   { to: "/ucretler", label: "Ücretler ve Harçlar" },
+                  { to: "/kurumsal-egitim", label: "Kurumsal Eğitim" },
                   { to: "/sinav-takvimi", label: "Sınav Takvimi ve Sonuçlar" },
                   { to: "/puan-hesaplama", label: "Puan Hesaplama" },
                   { to: "/basvuru-sartlari", label: "Başvuru Şartları" },

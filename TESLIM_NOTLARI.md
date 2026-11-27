@@ -58,6 +58,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 - `/puan-hesaplama`: silahsız, silahlı ve silah fark sınavı için puan hesaplama aracı.
 - `/basvuru-sartlari`: yaş, öğrenim, sağlık raporu ve adli sicil engelleri.
 - `/belge-ve-dilekceler`: Kocaeli İl Emniyet Müdürlüğü'nün dilekçe örnekleri (dosyalar emniyetin sitesinden iner) ve emniyet randevu bağlantısı. Emniyet dosya adlarını değiştirirse bağlantılar `src/data/icerik.ts` içindeki `dilekceler` listesinden güncellenir.
+- `/kurumsal-egitim`: kurum ve firmalara toplu temel ve yenileme eğitimi; süreç, kimler için ve teklif. Kurslar sayfasındaki "Özel Eğitim Talebi" bölümünden ve alt bilgiden bağlanır. "Teklif İsteyin" iletişim formunu "Kurumsal eğitim teklifi" konusuyla açar.
 - Ana sayfada **Hızlı Erişim** kutuları: sınav sonuçları, puan hesaplama, başvuru şartları, sınav takvimi, belge ve dilekçeler, emniyet randevusu, e-Devlet kimlik kartı, ücretler ve SSS.
 
 **Yeni panel ekranları**

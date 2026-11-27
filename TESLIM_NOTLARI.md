@@ -53,7 +53,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 **Yeni sayfalar**
 - `/ucretler`: kurs ücretleri ve devlet harçları, toplam maliyet ve yenilemede ödenenler.
 - `/sinav-takvimi`: yıla göre sınavlar, sonuç sorgulama ve e-Devlet kimlik kartı bağlantıları.
-- **Sık Sorulan Sorular** ana sayfada ayrı bir bölüm: ilk 5 soru görünür, "Tüm soruları gör" ile hepsi açılır. Menüdeki SSS bu bölüme götürür; eski `/sss` adresi de buraya yönlenir. Google için soru-cevap işaretlemesi var.
+- **Sık Sorulan Sorular** ana sayfada ayrı bir bölüm: ilk 5 soru görünür, "Tüm soruları gör" ile hepsi açılır. Hızlı erişimdeki ve alt bilgideki SSS bağlantısı bu bölüme götürür; eski `/sss` adresi de buraya yönlenir. Google için soru-cevap işaretlemesi var.
 - `/kvkk`: aydınlatma metni.
 - `/puan-hesaplama`: silahsız, silahlı ve silah fark sınavı için puan hesaplama aracı.
 - `/basvuru-sartlari`: yaş, öğrenim, sağlık raporu ve adli sicil engelleri.
@@ -80,7 +80,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 - Sınav takvimine 2027'nin ilk sınavı (21 Şubat 2027, 125. Temel ve 101. Yenileme) eklendi.
 
 **Görünüm**
-- Menüye Ücretler, Sınav Takvimi ve SSS eklendi; menü 1024 piksel ve üzerinde tek satır, altında açılır menü.
+- Menüye Ücretler ve Sınav Takvimi eklendi (SSS menüde değil, hızlı erişimde); menü 1024 piksel ve üzerinde tek satır, altında açılır menü.
 - Telefonda kurs sekmeleri tam okunuyor.
 - İletişim sayfasında telefon ve e-posta tıklanabilir.
 

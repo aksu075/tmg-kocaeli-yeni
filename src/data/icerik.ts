@@ -126,10 +126,9 @@ export const varsayilanTakvim: Takvim = {
       ],
     },
     {
+      // Takvim açıklanınca tarihler panelden girilir; boşken sitede "henüz açıklanmadı" yazar
       yil: "2027",
-      sinavlar: [
-        { tarih: "2027-02-21", temel: "125. Temel", yenileme: "101. Yenileme" },
-      ],
+      sinavlar: [],
     },
   ],
 };

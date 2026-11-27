@@ -77,7 +77,7 @@ Kurs bilgileri veritabanındadır; panelde **Kurslar** ekranından düzeltilir.
 **Duyurular**
 - Veritabanında hiç duyuru yoksa sitede EGM'nin son 6 duyurusu gösterilir (`src/data/duyurular.ts`); her biri EGM'deki asıl sayfaya gider.
 - Panelde **Duyurular** ekranı boşken çıkan **EGM duyurularını panele ekle** düğmesi bunları veritabanına kaydeder; sonra panelden düzenlenir ya da silinir.
-- Sınav takvimine 2027'nin ilk sınavı (21 Şubat 2027, 125. Temel ve 101. Yenileme) eklendi.
+- Sınav takviminde 2027 yılı açık: tarihi girilmemiş yıl sitede "henüz açıklanmadı" olarak görünür. EGM takvimi açıklayınca panelden (Sınav Takvimi) tarihler girilir.
 
 **Görünüm**
 - Menüye Ücretler ve Sınav Takvimi eklendi (SSS menüde değil, hızlı erişimde); menü 1024 piksel ve üzerinde tek satır, altında açılır menü.

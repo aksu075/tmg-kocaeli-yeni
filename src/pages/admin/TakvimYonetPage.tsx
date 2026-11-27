@@ -44,7 +44,7 @@ const TakvimYonetPage = () => {
         <>
           Emniyet yeni yılın takvimini açıklayınca <b>Yeni yıl ekle</b>'ye basıp tarihleri girin ve kaydedin. Geçmiş sınavlar sitede
           "Yapıldı", bugünden sonraki ilk sınav "Sıradaki sınav" olarak kendiliğinden işaretlenir. Eski bir yılı artık göstermek
-          istemezseniz o yılı silebilirsiniz.
+          istemezseniz o yılı silebilirsiniz. Tarihi girilmemiş bir yıl sitede "henüz açıklanmadı" olarak görünür.
         </>
       }
     >

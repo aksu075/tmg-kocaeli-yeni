@@ -40,6 +40,12 @@ const SinavTakvimiPage = () => {
           {yillar.map((y) => (
             <div key={y.yil} className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8">
               <h2 className="text-2xl font-bold text-tmg-dark mb-6">{y.yil} sınav tarihleri</h2>
+              {!(y.sinavlar || []).length && (
+                <p className="text-gray-600">
+                  {y.yil} sınav takvimi Emniyet Genel Müdürlüğü tarafından henüz açıklanmadı. Açıklandığında tarihleri burada
+                  yayınlayacağız.
+                </p>
+              )}
               <ul className="divide-y divide-gray-100">
                 {[...(y.sinavlar || [])]
                   .sort((a, b) => a.tarih.localeCompare(b.tarih))

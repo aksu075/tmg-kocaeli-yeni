@@ -10,7 +10,7 @@ export const baslangicDuyurulari = [
   {
     title: "Tüm Adayların ve Eğitim Kurumlarının Dikkatine: 2027'nin İlk Sınavı",
     summary:
-      "EGM, 125. Temel ve 101. Yenileme Eğitimi Sınavı'nın 21 Şubat 2027 Pazar günü yapılacağını duyurdu. Eğitimlerin bitiş tarihi 15 Ocak 2027.",
+      "EGM, 2027 yılının ilk sınavıyla ilgili adaylara ve eğitim kurumlarına duyuru yaptı. Kesin tarih ve ayrıntılar için EGM duyurusuna bakın.",
     link: EGM + "tum-adaylarin-ve-egitim-kurumlarinin-dikkatine-2411",
     publishDate: "2026-11-24",
   },
